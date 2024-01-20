@@ -36,3 +36,8 @@ minikube service mongodb-service --url    # then update .env with generated url
 ### Running Server
 npm i -D tsx
 npx tsx app.ts
+
+
+### TODO
+- error popups
+- add upvote/downvote history to user schema, add votes field to chatmessage, different between chat and vote messages in socket
