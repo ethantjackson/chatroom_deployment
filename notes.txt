@@ -1,0 +1,38 @@
+https://www.bogotobogo.com/DevOps/Docker/Docker_Kubernetes_MongoDB_MongoExpress.php
+https://www.youtube.com/watch?v=X48VuDVv0do&t=1099s
+https://ananyacodes.hashnode.dev/deploy-mern-app-to-k8s-minikube
+Enable Kubernetes on Docker Desktop
+
+minikube start
+
+echo -n 'username' | base64
+echo -n 'password' | base64
+kubectl apply -f mongodb-secret.yaml
+kubectl get secret
+
+kubectl apply -f mongodb-deployment.yaml
+
+kubectl get pods
+
+kubectl get svc
+kubectl describe service mongodb-service
+kubectl get pod -o wide
+kubectl get all | grep mongo
+kubectl get all | Select-String -Pattern "mongo"     # windows only
+
+kubectl apply -f mongo-configmap.yaml
+
+kubectl apply -f mongo-express-deployment.yaml
+
+minikube service mongo-express-service  
+minikube ip
+minikube service list
+
+admin
+pass
+
+minikube service mongodb-service --url    # then update .env with generated url
+
+### Running Server
+npm i -D tsx
+npx tsx app.ts
