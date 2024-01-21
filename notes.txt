@@ -38,6 +38,24 @@ npm i -D tsx
 npx tsx app.ts
 
 
+https://codingpirate.com/mongodb-statefulset-in-kubernetes-87c2f5974821
+# Start minikube
+minikube start
+
+# Set docker env
+eval $(minikube docker-env)             # Unix shells
+minikube docker-env | Invoke-Expression # PowerShell
+
+# Build image
+docker build -t foo:0.0.1 .
+
+# Run in Minikube
+kubectl run hello-foo --image=foo:0.0.1 --image-pull-policy=Never
+
+# Check that it's running
+kubectl get pods
+
+
 ### TODO
 - error popups
 - add upvote/downvote history to user schema, add votes field to chatmessage, different between chat and vote messages in socket

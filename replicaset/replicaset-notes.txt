@@ -1,0 +1,22 @@
+https://blog.knoldus.com/how-to-deploy-mongodb-cluster-on-kubernetes/
+
+### MongoDB ReplicaSet
+
+kubectl apply -f mongodb-headless.yml
+
+kubectl apply -f mongo-config.yml
+
+kubectl apply -f mongodb-storageclass.yml
+
+kubectl apply -f mongodb-sts.yml
+
+kubectl get sts mongodb and kubectl get pods -l app=mongodb
+
+kubectl exec -it mongodb-0 -- mongo
+
+
+### backend webserver
+
+docker build -t server ../../chatroom/server
+
+docker run -it --name server-container -p 8000:8000 server
